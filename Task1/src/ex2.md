@@ -1,5 +1,9 @@
 # Analysis of a Real-World Operational System: Supermarket
 
+## Task 1.1.2
+
+Take a real-world operational system that can be observed (bank, supermarket) and identify the elements associated with it in terms of variability, complexity, interconnectedness
+
 ---
 
 ## Introduction
@@ -51,20 +55,6 @@ Supermarkets are complex systems that operate with high variability and interdep
 - **Interconnectedness**:
     - **Coordination with Customer Service**: Effective staffing directly impacts customer service, ensuring checkout lines remain manageable and shelves stay stocked.
     - **Employee Morale and Retention**: Well-optimized schedules that respect staff needs positively impact job satisfaction and retention.
-
-### 4. **Marketing and Promotions**
-
-- **Variability**:
-    - **Customer Response**: Customer reactions to promotions vary significantly based on personal preferences, seasonality, and external factors.
-    - **Competition Influence**: Competitor promotions impact the effectiveness of a supermarket’s offers, adding variability in customer turnout.
-
-- **Complexity**:
-    - **Dynamic Pricing Strategies**: Promotions must be carefully timed and priced to optimize sales without sacrificing profit margins.
-    - **Cross-Department Coordination**: Successful promotions require coordination across departments, including inventory, sales, and customer service.
-
-- **Interconnectedness**:
-    - **Impact on Inventory**: Promotions increase demand for specific products, affecting stock levels and restocking needs.
-    - **Influence on Revenue**: Marketing initiatives directly impact the supermarket's revenue and customer retention rates.
 
 ---
 
