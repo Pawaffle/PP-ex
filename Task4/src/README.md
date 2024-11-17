@@ -103,35 +103,67 @@ These metrics provide an overview of the entire system's performance.
 ### System 2: Bank reception
 ![System Architecture](nonlin.png)
 
-## 4.
+## 4. Main Loop Algorithm for the Simulator
 
-## Algorithm Steps
+Below is a general solution for the main loop of a simulator in a three-phase simulation approach:
 
-### 1. Initialize the System
+```java
+public void mainLoop() {
+    double simulationTime = 0;
+    PriorityQueue<Event> eventQueue = initializeEvents(); // B-events
+    PerformanceMetrics metrics = new PerformanceMetrics();
+
+    while (!eventQueue.isEmpty() && simulationTime < MAX_SIMULATION_TIME) {
+        // A-phase: Advance time
+        Event currentEvent = eventQueue.poll();
+        simulationTime = currentEvent.getEventTime();
+
+        // B-phase: Process bound events
+        processBoundEvents(currentEvent, metrics, eventQueue);
+
+        // C-phase: Handle conditional events
+        checkAndProcessConditionalEvents(metrics, eventQueue);
+
+        // Update metrics
+        metrics.update(simulationTime);
+    }
+
+    metrics.printSummary();
+}
+```
+
+## 5. Explaining A, B, and C-Phases in the Simulator
+
+### A-phase (Advance Time)
 - Set up all entities (e.g., operators, customers, resources).
-- Define the event list (B-events and C-events).
+- Identify the earliest scheduled event in the event queue.
 - Initialize the current simulation time to zero.
 
-### 2. Main Loop
-The main loop runs until the termination condition is met (e.g., simulation time reaches a set limit or all events are processed). In each iteration, the following steps are executed.
+### B-phase (Process Bound Events)
+- These are pre-scheduled activities, such as a customer arriving or completing service.
+- Execute the actions defined for the current event.
 
-#### a. Event Handling
-1. **Sort and Retrieve the Next Event:**
-    - Determine the next event based on the earliest time in the event queue (priority queue, sorted list, etc.).
-    - Set the simulation time to the time of the next event.
+Example:
 
-2. **Process B-Event (Bound or Booked Event):**
-    - B-events are scheduled state changes, such as customer arrivals, task completions, etc.
-    - For each B-event:
-        - **Update System State:** Change the state of the system according to the event (e.g., an operator becomes free after completing a task).
-        - **Schedule Future B-Events:** If applicable, schedule the next B-event for that entity (e.g., schedule a customer's service completion).
+```java
+if (currentEvent.getType() == EventType.ARRIVAL) {
+    handleArrivalEvent(currentEvent);
+    scheduleNextArrival(eventQueue);
+}
+if (currentEvent.getType() == EventType.DEPARTURE) {
+    handleDepartureEvent(currentEvent);
+}
+```
 
-3. **Check for Conditional Events (C-Events):**
-    - C-events depend on system conditions (e.g., an operator can only start serving a customer if there is a customer waiting).
-    - Evaluate the current state of the system to check if any C-events can be triggered:
-        - **If C-event is possible:** Trigger the event and update the state accordingly (e.g., an operator starts serving a customer).
-        - **Schedule Future C-events:** If applicable, schedule any follow-up C-events (e.g., the end of the service).
+### C-phase (Process Bound Events)
+- processes state changes triggered by conditions, such as starting a service when both a server is free and a customer is waiting.
+- Check for unmet conditions.
 
-#### b. Termination Check
-- After processing all events for the current iteration, check whether the simulation should end.
-- If not, continue to the next event.
+Example:
+
+```java
+if (isServerFree() && hasWaitingCustomers()) {
+    startService(nextCustomer());
+    scheduleServiceCompletion(eventQueue);
+}
+```
