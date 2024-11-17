@@ -39,6 +39,7 @@
 
 - **N (Average Queue Length):** Average number of customers in the queue and being served: `N = W / T`.
     - **Example:** If `W = 35 hours` and `T = 8 hours`, then `N = 35 / 8 = 4.375`, meaning an average of about 4-5 customers were in the system.
+---
 
 ## 2. Performance Measures Categorization (W)
 
@@ -103,6 +104,8 @@ These metrics provide an overview of the entire system's performance.
 ### System 2: Bank reception
 ![System Architecture](nonlin.png)
 
+---
+
 ## 4. Main Loop Algorithm for the Simulator
 
 Below is a general solution for the main loop of a simulator in a three-phase simulation approach:
@@ -131,6 +134,8 @@ public void mainLoop() {
     metrics.printSummary();
 }
 ```
+
+---
 
 ## 5. Explaining A, B, and C-Phases in the Simulator
 
