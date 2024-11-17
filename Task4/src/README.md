@@ -44,7 +44,7 @@
 ## 2. Performance Measures Categorization
 
 ### Categories:
-#### 1. **Service Point-Level Metrics**
+### 1. **Service Point-Level Metrics**
 These metrics track the performance and usage of individual service points (e.g., tellers in a bank, doctors in a clinic).
 
 - **B (Active Time in Service Point):**
@@ -59,7 +59,7 @@ These metrics track the performance and usage of individual service points (e.g.
     - **Example:** In a call center, the average time spent on each customer call is 5 minutes.
     - **Key Insight:** Service time helps assess whether a service point is operating efficiently or if delays are expected.
 
-#### 2. **Customer-Level Metrics**
+### 2. **Customer-Level Metrics**
 These metrics measure the experience of individual customers in the system.
 
 - **Rᵢ (Response Time):**
@@ -74,7 +74,7 @@ These metrics measure the experience of individual customers in the system.
     - **Example:** At a car wash, each customer’s response time averages to 15 minutes.
     - **Key Insight:** This provides an overall view of customer delays in the system.
 
-#### 3. **System-Level Metrics**
+### 3. **System-Level Metrics**
 These metrics provide an overview of the entire system's performance.
 
 - **A (Arrived Clients Count):**
