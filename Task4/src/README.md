@@ -96,10 +96,12 @@ These metrics provide an overview of the entire system's performance.
 
 ## 3. Two Real-World Systems Design (W)
 
-### System 1: Hospital Emergency Department
-Diagram:
+### System 1: Dispensing of medicine
 
-![System Architecture](Untitled_Diagram.drawio)
+![System Architecture](lin.png)
+
+### System 2: Bank reception
+![System Architecture](nonlin.png)
 
 ## 4.
 
