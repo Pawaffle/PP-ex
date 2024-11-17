@@ -4,7 +4,7 @@
 
 ### Example Case: Bank Service System
 
-#### Metrics:
+### Metrics:
 - **A (Arrived Clients Count):** Represents the total number of customers entering the bank during the simulation period.
     - **Example:** If the bank opens at 9 AM and closes at 5 PM, and 150 customers enter during this period, then `A = 150`.
 
@@ -17,7 +17,7 @@
 - **T (Total Simulation Time):** Covers the entire simulation period, from when the bank opens to when it closes.
     - **Example:** If the bank operates for 8 hours, `T = 8 hours`.
 
-#### Derived Metrics:
+### Derived Metrics:
 - **U (Utilization):** Measures teller efficiency as `U = B / T`. A high value indicates heavy teller usage.
     - **Example:** If `B = 15 hours` and `T = 8 hours`, then `U = 15 / 8 = 1.875`, meaning tellers were over-utilized.
 
@@ -27,7 +27,7 @@
 - **S (Service Time):** Average time a teller spends per customer, calculated as `S = B / C`.
     - **Example:** If `B = 15 hours` and `C = 140`, then `S = 15 / 140 ≈ 0.107 hours` or about `6.43 minutes per customer`.
 
-#### Additional Metrics:
+### Additional Metrics:
 - **Rᵢ (Response Time):** For each customer, the time taken from joining the queue to completing their transaction.
     - **Example:** A customer arrives at 10:00 AM, joins the queue, and completes the transaction at 10:15 AM. Their `Rᵢ = 15 minutes`.
 
