@@ -41,7 +41,7 @@
     - **Example:** If `W = 35 hours` and `T = 8 hours`, then `N = 35 / 8 = 4.375`, meaning an average of about 4-5 customers were in the system.
 ---
 
-## 2. Performance Measures Categorization (W)
+## 2. Performance Measures Categorization
 
 ### Categories:
 #### 1. **Service Point-Level Metrics**
@@ -95,7 +95,7 @@ These metrics provide an overview of the entire system's performance.
 
 ---
 
-## 3. Two Real-World Systems Design (W)
+## 3. Two Real-World Systems Design
 
 ### System 1: Dispensing of medicine
 
