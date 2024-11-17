@@ -99,7 +99,7 @@ These metrics provide an overview of the entire system's performance.
 ### System 1: Hospital Emergency Department
 Diagram:
 
-![System Architecture](src/Untitled Diagram.drawio)
+![System Architecture](Untitled_Diagram.drawio)
 
 ## 4.
 
